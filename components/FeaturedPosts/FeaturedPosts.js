@@ -1,8 +1,12 @@
+import PostsGrid from '../Posts/PostsGrid/PostsGrid';
 import styles from './FeaturedPosts.module.css';
 
-const FeaturedPosts = () => {
+const FeaturedPosts = ({ posts }) => {
     return (
-        <h1>Featured Posts</h1>
+        <section className={styles.latest}>
+            <h2>Featured Posts</h2>
+            <PostsGrid posts={posts} />
+        </section>
     );
 }
 
