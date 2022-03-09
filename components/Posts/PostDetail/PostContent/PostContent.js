@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedlight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import solarizedlight from 'react-syntax-highlighter/dist/cjs/styles/prism/solarizedlight';
+import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import { PostHeader } from '../PostHeader';
 import styles from './PostContent.module.css';
+
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('css', css);
 
 const PostContent = ({ post }) => {
     const imagePath = `/images/posts/${post.slug}/${post.image}`;
