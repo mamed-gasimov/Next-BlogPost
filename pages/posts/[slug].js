@@ -1,9 +1,16 @@
+import Head from 'next/head';
 import { PostContent } from '../../components/Posts/PostDetail/PostContent';
 import { getPostData, getPostsFiles } from '../../helpers/posts-util';
 
 const PostDetailPage = ({ post }) => {
     return (
-        <PostContent post={post} />
+        <>
+            <Head>
+                <title>{post.title}</title>
+                <meta name='description' content={post.summary} />
+            </Head>
+            <PostContent post={post} />
+        </>
     );
 }
 
